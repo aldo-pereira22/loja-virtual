@@ -14,26 +14,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.models.Categoria;
-import com.example.demo.service.CategoriaService;
+import com.example.demo.models.Produto;
+import com.example.demo.service.ProdutoService;
 
 @RestController
-@RequestMapping("/categoria")
-public class CategoriaController {
+@RequestMapping("/produto")
+public class ProdutoController {
 
-	
 	@Autowired
-	private CategoriaService service;
+	private ProdutoService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Categoria>> listar(){
-		return new ResponseEntity<List<Categoria>>(service.findAll(),HttpStatus.OK);
+	public ResponseEntity<List<Produto>> listar(){
+		return new ResponseEntity<List<Produto>>(service.findAll(),HttpStatus.OK);
 	}
 	
+	
 	@PostMapping
-	public ResponseEntity<Categoria> salvar(@RequestBody Categoria categoria ){
-		return new ResponseEntity<Categoria>(service.save(categoria), HttpStatus.CREATED);
+	public ResponseEntity<Produto> salvar(@RequestBody Produto produto ){
+		return new ResponseEntity<Produto>(service.save(produto), HttpStatus.CREATED);
 	}
+	
 	
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id){
@@ -42,7 +43,15 @@ public class CategoriaController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<Categoria> update(@RequestBody Categoria categoria){
-		return new ResponseEntity<Categoria>(service.save(categoria), HttpStatus.CREATED);
+	public ResponseEntity<Produto> update(@RequestBody Produto produto){
+		return new ResponseEntity<Produto>(service.save(produto), HttpStatus.CREATED);
 	}
+	
+	
 }
+
+
+
+
+
+
