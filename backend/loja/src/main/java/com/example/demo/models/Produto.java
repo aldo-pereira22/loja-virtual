@@ -1,13 +1,16 @@
 package com.example.demo.models;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Produto {
+public class Produto implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -19,7 +22,6 @@ public class Produto {
 
 	}
 
-	
 	
 	public Produto(Long id, String nome, Double preco, int qunatidade) {
 		this.id = id;

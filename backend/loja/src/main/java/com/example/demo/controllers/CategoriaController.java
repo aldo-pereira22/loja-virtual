@@ -30,10 +30,18 @@ public class CategoriaController {
 		return new ResponseEntity<List<Categoria>>(service.findAll(),HttpStatus.OK);
 	}
 	
+	@GetMapping("/{id}")
+	public ResponseEntity<Categoria> getCategoriaById(@PathVariable Long id){
+		return new ResponseEntity<Categoria>(service.findById(id).get(),HttpStatus.OK);
+	}
+	
+	
 	@PostMapping
 	public ResponseEntity<Categoria> salvar(@RequestBody Categoria categoria ){
 		return new ResponseEntity<Categoria>(service.save(categoria), HttpStatus.CREATED);
 	}
+	
+	
 	
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id){

@@ -28,7 +28,10 @@ public class ProdutoController {
 	public ResponseEntity<List<Produto>> listar(){
 		return new ResponseEntity<List<Produto>>(service.findAll(),HttpStatus.OK);
 	}
-	
+	@GetMapping("produto/{id}")
+	public ResponseEntity<Produto> getCategoriaById(@PathVariable Long id){
+		return new ResponseEntity<Produto>(service.findById(id).get(),HttpStatus.OK);
+	}
 	
 	@PostMapping
 	public ResponseEntity<Produto> salvar(@RequestBody Produto produto ){
