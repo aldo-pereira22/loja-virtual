@@ -63,7 +63,7 @@ public class Produto implements Serializable {
 		return "Produto [id=" + id + ", nome=" + nome + ", preco=" + preco + ", qunatidade=" + quantidade + "]";
 	}
 
-	public Double getTotal() {
+	public Double getValorEmEstoque() {
 		return this.quantidade * this.preco;
 	}
 
