@@ -41,8 +41,6 @@ public class CategoriaController {
 		return new ResponseEntity<Categoria>(service.save(categoria), HttpStatus.CREATED);
 	}
 	
-	
-	
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id){
 		service.delete(id);

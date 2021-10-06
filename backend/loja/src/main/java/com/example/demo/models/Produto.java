@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Produto implements Serializable {
@@ -14,29 +15,57 @@ public class Produto implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String nome;
 	private Double preco;
-	private int qunatidade;
+	private int quantidade;
+	
+	@ManyToOne
+//	@JoinColumn(name="id_categoria")
+	private Categoria categoria;
 	
 	public Produto() {
 
 	}
 
 	
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+
 	public Produto(Long id, String nome, Double preco, int qunatidade) {
 		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
-		this.qunatidade = qunatidade;
+		this.quantidade = qunatidade;
 	}
 
 
 
 	@Override
 	public String toString() {
-		return "Produto [id=" + id + ", nome=" + nome + ", preco=" + preco + ", qunatidade=" + qunatidade + "]";
+		return "Produto [id=" + id + ", nome=" + nome + ", preco=" + preco + ", qunatidade=" + quantidade + "]";
 	}
 
+	public Double getTotal() {
+		return this.quantidade * this.preco;
+	}
 
 
 	public Long getId() {
@@ -63,13 +92,6 @@ public class Produto implements Serializable {
 		this.preco = preco;
 	}
 
-	public int getQunatidade() {
-		return qunatidade;
-	}
-
-	public void setQunatidade(int qunatidade) {
-		this.qunatidade = qunatidade;
-	}
 
 
 
