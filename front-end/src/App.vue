@@ -1,9 +1,19 @@
 <template>
   <div id="nav">
-        <router-link to="/menu">Menu</router-link>
+      <Menu> </Menu>
   </div>
-  <router-view/>
 </template>
+
+<script>
+import Menu from './components/menu/Menu.vue'
+
+export default {
+  components: {
+    Menu
+  },
+};
+</script>
+
 
 <style>
 #app {
@@ -14,7 +24,7 @@
   color: #2c3e50;
 }
 
-/* #nav {
+#nav {
   padding: 30px;
 }
 
@@ -25,5 +35,5 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
-} */
+}
 </style>

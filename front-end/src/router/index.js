@@ -1,12 +1,26 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Menu from '../components/menu/Menu.vue'
+import Home from '../views/Home.vue'
+import Produto from '../views/Produtos.vue'
+import Categoria from '../views/Categoria.vue'
+
 const routes = [
 
+
   {
-    path: '/menu',
-    name: 'Menu',
-    component: Menu
+    path: '/',
+    name: 'home',
+    component: Home
   },
+  {
+    path: '/produtos',
+    name: 'Produtos',
+    component: Produto
+  },
+  {
+    path: '/categorias',
+    name: 'Categoria',
+    component: Categoria
+  }
   
 ]
 
