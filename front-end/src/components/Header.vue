@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-      <h1>Header</h1>
+     
+    <div class="header">
+        <h1>Rei do Varejo!</h1>
+    </div>
+     
   </div>
 </template>
 
@@ -13,8 +17,14 @@ export default {
 
 <style scoped>
 
-*{
-    margin: 0;
+
+
+.header{
+    width: 100%;
+    height: 200px;
+    background-color: blueviolet;
+    display: flex;
 }
+
 
 </style>

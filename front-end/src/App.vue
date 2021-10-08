@@ -1,11 +1,11 @@
 <template>
-  <div id="nav">
+  <div class="container">
     <Header />
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/produtos">Produtos</router-link>
+    <router-view />
   </div>
-  <router-view />
 </template>
 <script>
 import Header from "./components/Header.vue";
@@ -17,9 +17,11 @@ export default {
 </script>
 
 <style scoped>
-
+* {
+  margin: 0;
+}
 .container {
-  background-color: blue;
+
 }
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
