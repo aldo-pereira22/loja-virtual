@@ -1,6 +1,6 @@
 <template>
   <h1>
-      lista com os produtos
+      lista com todos os produtos da nossa Loja!
   </h1>
 </template>
 
