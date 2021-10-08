@@ -20,9 +20,7 @@ export default {
 * {
   margin: 0;
 }
-.container {
 
-}
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
